@@ -48,6 +48,8 @@
     <Compile Include="LogicaRaices\MetodosRaices.cs" />
     <Compile Include="LogicaRaices\ParametrosRaices.cs" />
     <Compile Include="LogicaRaices\ResultadosRaices.cs" />
+    <Compile Include="LogicaTangente\MetodosTangente.cs" />
+    <Compile Include="LogicaTangente\ParametrosTangente.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

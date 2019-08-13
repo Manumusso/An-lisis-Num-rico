@@ -12,8 +12,7 @@ namespace AnalisisNumerico.BackEnd.Logica
 
         public ResultadosRaices MetodoBiseccionReglaFalsa(ParametrosRaices parametros)
         {
-
-
+            return null;
         }
 
         private double RetornarImagen(string funcion, double xr)
