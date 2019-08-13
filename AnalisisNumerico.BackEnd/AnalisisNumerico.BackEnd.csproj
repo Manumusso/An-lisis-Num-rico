@@ -47,6 +47,7 @@
     <Compile Include="IMetodosRaices.cs" />
     <Compile Include="MetodosRaices.cs" />
     <Compile Include="MetodosBiseccion.cs" />
+    <Compile Include="MetodosTangente.cs" />
     <Compile Include="Parametros.cs" />
     <Compile Include="Resultados.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
