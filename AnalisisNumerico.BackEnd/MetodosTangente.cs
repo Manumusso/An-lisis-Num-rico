@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AnalisisNumerico.BackEnd.LogicaTangente
+namespace AnalisisNumerico.BackEnd
 {
-    class ResultadosTangente
+    class MetodosTangente
     {
     }
 }

@@ -44,12 +44,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LogicaRaices\IMetodosRaices.cs" />
-    <Compile Include="LogicaRaices\MetodosRaices.cs" />
-    <Compile Include="LogicaRaices\ParametrosRaices.cs" />
-    <Compile Include="LogicaRaices\ResultadosRaices.cs" />
-    <Compile Include="LogicaTangente\MetodosTangente.cs" />
-    <Compile Include="LogicaTangente\ParametrosTangente.cs" />
+    <Compile Include="IMetodosRaices.cs" />
+    <Compile Include="MetodosRaices.cs" />
+    <Compile Include="MetodosBiseccion.cs" />
+    <Compile Include="Parametros.cs" />
+    <Compile Include="Resultados.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
