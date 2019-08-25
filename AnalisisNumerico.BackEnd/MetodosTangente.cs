@@ -16,7 +16,10 @@ namespace AnalisisNumerico.BackEnd
         //double ValorDerecho 
         //bool Finalizo 
 
-        
+        public Parametros MetodoBiseccionReglaFalsa(Parametros parametros)
+        {
+            return null;
+        }
 
         public static double Calcular(Parametros parametros)
         {
@@ -54,9 +57,6 @@ namespace AnalisisNumerico.BackEnd
             return Xr;            
         }
 
-        public Parametros MetodoBiseccionReglaFalsa(Parametros parametros)
-        {
-            return null;
-        }
+
     }
 }
