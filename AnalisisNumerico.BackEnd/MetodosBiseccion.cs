@@ -8,9 +8,8 @@ using org.mariuszgromada.math.mxparser;
 
 namespace AnalisisNumerico.BackEnd
 {
-    class MetodosBiseccion : MetodosRaices
+    public class MetodosBiseccion : MetodosRaices
     {
-
         private double CalcularXrBiseccion(double xi, double xd)
         {
             return (xi + xd) / 2;
@@ -18,19 +17,19 @@ namespace AnalisisNumerico.BackEnd
 
         private double CalcularXrReglaFalsa(double xi, double xd, string pfuncion)
         {
-            return ((RetornarImagen(pfuncion, xd) * xi) - (RetornarImagen(pfuncion, xi) * xd)) / (RetornarImagen(pfuncion, xd) - RetornarImagen(pfuncion, xi));
+            return ((RetornarValor(pfuncion, xd) * xi) - (RetornarValor(pfuncion, xi) * xd)) / (RetornarValor(pfuncion, xd) - RetornarValor(pfuncion, xi));
         }
 
-        /*public Resultados MetodoBiseccionReglaFalsa(Parametros parametros)
+        public Resultados MetodoBiseccionReglaFalsa(Parametros parametros)
         {
             var funcion = new Function(parametros.Funcion);
             var arg1 = new Argument("x", parametros.ValorIzquierdo);
-            var arg2= new Argument("x", parametros.ValorDerecho);
+            var arg2 = new Argument("x", parametros.ValorDerecho);
 
             var nombre = parametros.Funcion.Split('=')[0].Trim();
 
             var expres1 = new Expression(nombre, funcion, arg1);
-            var expres2= new Expression(nombre, funcion, arg2);
+            var expres2 = new Expression(nombre, funcion, arg2);
 
             bool termino = false;
 
@@ -74,19 +73,19 @@ namespace AnalisisNumerico.BackEnd
 
                     Erek1 = (Xr - antXr) / Xr; //Ver el caso que divide por 0
 
-                    //var argumentoXr = new Argument("x", Xr);
-                    //var expresionXr = new Expression(nombre, funcion, argumentoXr);
+                    var argumentoXr = new Argument("x", Xr);
+                    var expresionXr = new Expression(nombre, funcion, argumentoXr);
 
-                    if ((Math.Abs((parametros.Funcion, Xr)) < parametros.Tolerancia) || (cInteraciones > parametros.Iteraciones) || (Math.Abs(Erel) < parametros.Tolerancia))
+                    if ((Math.Abs((Xr)) < parametros.Tolerancia) || (cInteraciones > parametros.Iteraciones) || (Math.Abs(Erek1) < parametros.Tolerancia))
                     {
                         resultado.Raiz = Xr;
                         termino = true;
                     }
                     else
                     {
-                        //var imagenvalorinicial = expresion1.calculate();
-                        //var imagenvalorxr = RetornarImagen(parametros.Funcion, Xr);
-                        if ((expres1.calculate()) * RetornarImagen(parametros.Funcion, Xr) > 0)
+                        var imagenvalorinicial = expres1.calculate();
+                        var imagenvalorxr = RetornarValor(parametros.Funcion, Xr);
+                        if ((expres1.calculate()) * RetornarValor(parametros.Funcion, Xr) > 0)
                         {
                             parametros.ValorIzquierdo = Xr;
                         }
@@ -102,6 +101,7 @@ namespace AnalisisNumerico.BackEnd
                 resultado.Error = Math.Abs(Erek1);
             }
             return resultado;
-        }*/
+        }
+
     }
 }   
