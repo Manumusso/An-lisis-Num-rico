@@ -9,7 +9,7 @@ namespace AnalisisNumerico.BackEnd
 {
     class MetodosBiseccion : MetodosRaices
     {
-        public ResultadosRaices MetodoBiseccionReglaFalsa(ParametrosRaices parametros)
+        public ResultadosRaices MetodoBiseccionReglaFalsa(Parametros parametros)
         {
             return null;
         }

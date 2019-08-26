@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AnalisisNumerico.BackEnd.Logica
+namespace AnalisisNumerico.BackEnd
 {
      public interface IMetodosRaices
     {
-        ResultadosRaices MetodoBiseccionReglaFalsa(ParametrosRaices parametros);
+        Parametros MetodoBiseccionReglaFalsa(Parametros parametros);
 
 
     }
