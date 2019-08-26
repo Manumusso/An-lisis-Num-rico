@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using org.mariuszgromada.math.mxparser;
 
-namespace AnalisisNumerico.BackEnd.Logica
+namespace AnalisisNumerico.BackEnd
 {
     public class MetodosRaices//:IMetodosRaices
     {
@@ -16,8 +16,5 @@ namespace AnalisisNumerico.BackEnd.Logica
             //var imagen = new Function(funcion).calculate(xr);
             return new Function(funcion).calculate(xr);
         }
-
-        
-
-    }
+    }    
 }
