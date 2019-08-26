@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AnalisisNumerico.BackEnd.Logica
+namespace AnalisisNumerico.BackEnd
 {
-    public class ResultadosRaices
+    public class Resultados
     {
         public double Raiz { get; set; }
 

@@ -1,4 +1,4 @@
-﻿using AnalisisNumerico.BackEnd.Logica;
+﻿using AnalisisNumerico.BackEnd;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +9,7 @@ namespace AnalisisNumerico.BackEnd
 {
     class MetodosBiseccion : MetodosRaices
     {
-        public ResultadosRaices MetodoBiseccionReglaFalsa(Parametros parametros)
+        public Resultados MetodoBiseccionReglaFalsa(Parametros parametros)
         {
             return null;
         }
