@@ -41,7 +41,7 @@ namespace AnalisisNumerico.Front
 
                 //var resultado = metodosRaices.MetodoBiseccionReglaFalsa(parametros);
 
-                textBox_Raiz.Text = MetodosTangente.Calcular(parametros).ToString();
+                textBox_Raiz.Text = MetodosTangente.Calcular(parametros).Raiz.ToString();
 
                 //if (resultado.Observacion == "")
                 //{

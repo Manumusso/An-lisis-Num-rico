@@ -18,40 +18,59 @@ namespace AnalisisNumerico.BackEnd
 
         
 
-        public static double Calcular(Parametros parametros)
+        public static Resultados Calcular(Parametros parametros)
         {
-            double replace = parametros.ValorDerecho;
+            double valorX = parametros.ValorDerecho;
+            bool flag = true;
+            double xR = 0;
+            double xAnt = 0;
+            double error = 0;
+            var cont = 0;
 
             Function func = new Function("F(x) = " + parametros.Funcion);
-            Expression ex = new Expression($"F({parametros.ValorDerecho})", func);
+            //Expression ex = (new Expression($"F({valorX})", func));
 
-            var x = ex.calculate();
-            var a = new StringToFormula();
-            var funcionParametros = parametros.Funcion.ToUpper().Replace("X", replace.ToString());
-            if (a.Eval(funcionParametros) == 0)
+            Expression ex = (new Expression($"F({valorX})", func));
+            var ResultValorX = ex.calculate();
+
+            while (flag)
             {
-                return replace;
+
+                if (Math.Abs(ResultValorX) <= parametros.Tolerancia)
+                {
+                    return new Resultados()
+                    {
+                        Raiz = valorX,
+                    };
+                }
+                else
+                {
+                    cont++;
+                    Double val = ((new Expression($"F({valorX + parametros.Tolerancia})", func)).calculate() - ResultValorX);
+                    double derivadaEnX = val / parametros.Tolerancia;
+                    xR = (valorX - ResultValorX) / derivadaEnX;
+
+                    error = Math.Abs(xR - xAnt) / xR;
+
+
+                    ex = (new Expression($"F({xR})", func));
+                    ResultValorX = ex.calculate();
+
+                    if(error < parametros.Tolerancia || cont >= parametros.Iteraciones)
+                    {
+                        return new Resultados()
+                        {
+                            Raiz = valorX,
+                        };
+                    }
+
+                    valorX = xR;
+                    xAnt = xR;
+                }
+
             }
-            var cont = 0;
-            double replaceAnt = 0;
 
-            double error, Xr;
-            do
-            {
-                cont++;
-                var FxniTol = parametros.Funcion.ToUpper().Replace("X", (replace + parametros.Tolerancia).ToString());
-                var Fxni = parametros.Funcion.ToUpper().Replace("X", replace.ToString());
-                var deri = (a.Eval(FxniTol) - a.Eval(Fxni)) / parametros.Tolerancia;
-                Xr = (replace - a.Eval(Fxni)) / deri;
-                error = Math.Abs(Xr - replaceAnt) / Xr;
-
-                replaceAnt = Xr;
-                replace = Xr;
-            } while ((Math.Abs(a.Eval(parametros.Funcion.ToUpper().Replace("X", Xr.ToString()))) < parametros.Tolerancia)
-                || cont > parametros.Iteraciones
-                || error < parametros.Tolerancia);
-
-            return Xr;            
+            return null;            
         }
 
         public Parametros MetodoBiseccionReglaFalsa(Parametros parametros)
