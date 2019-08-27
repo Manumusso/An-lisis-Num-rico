@@ -7,7 +7,7 @@ using org.mariuszgromada.math.mxparser;
 
 namespace AnalisisNumerico.BackEnd
 {
-    public class MetodosTangente : IMetodosRaices
+    public class MetodosTangente : MetodosRaices
     {
         //string Funcion 
         //int Iteraciones 
@@ -16,7 +16,12 @@ namespace AnalisisNumerico.BackEnd
         //double ValorDerecho 
         //bool Finalizo 
 
-        
+     
+
+        public Parametros asd(Parametros parametros)
+        {
+            return null;
+        }
 
         public static Resultados Calcular(Parametros parametros)
         {
@@ -73,9 +78,6 @@ namespace AnalisisNumerico.BackEnd
             return null;            
         }
 
-        public Parametros MetodoBiseccionReglaFalsa(Parametros parametros)
-        {
-            return null;
-        }
+
     }
 }

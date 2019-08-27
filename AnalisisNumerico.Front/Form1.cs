@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AnalisisNumerico.BackEnd;
 using System.Windows.Forms;
 
 namespace AnalisisNumerico.Front
@@ -39,20 +40,21 @@ namespace AnalisisNumerico.Front
                 parametros.ValorIzquierdo = double.Parse(textBox_ValorIzquierdo.Text);
                 parametros.Finalizo = true;
 
-                //var resultado = metodosRaices.MetodoBiseccionReglaFalsa(parametros);
+                MetodosBiseccion Ejecutar = new MetodosBiseccion();
+                var resultado = Ejecutar.MetodoBiseccionReglaFalsa(parametros);
 
-                textBox_Raiz.Text = MetodosTangente.Calcular(parametros).Raiz.ToString();
+                //textBox_Raiz.Text = MetodosTangente.Calcular(parametros).ToString();
 
-                //if (resultado.Observacion == "")
-                //{
-                //    textBox_Error.Text = resultado.Error.ToString("N8");
-                //    textBox_Iteraciones.Text = resultado.Iteraciones.ToString();
-                //    textBox_Raiz.Text = resultado.Raiz.ToString("N8");
-                //}
-                //else
-                //{
-                //    MessageBox.Show("Los extremos ingresados no son válidos", "Notificación", MessageBoxButtons.OK);
-                //}
+                if (resultado.Observacion == "")
+                {
+                    textBox_Error.Text = resultado.Error.ToString("N8");
+                    textBox_Iteraciones.Text = resultado.Iteraciones.ToString();
+                    textBox_Raiz.Text = resultado.Raiz.ToString("N8");
+                }
+                else
+                {
+                    MessageBox.Show("Los extremos ingresados no son válidos", "Notificación", MessageBoxButtons.OK);
+                }
             }
         }
     }

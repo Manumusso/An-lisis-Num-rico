@@ -8,7 +8,7 @@ namespace AnalisisNumerico.BackEnd
 {
      public interface IMetodosRaices
     {
-        Parametros MetodoBiseccionReglaFalsa(Parametros parametros);
+        double RetornarValor(string funcion, double xr);
 
 
     }
