@@ -7,14 +7,19 @@ using org.mariuszgromada.math.mxparser;
 
 namespace AnalisisNumerico.BackEnd
 {
-    public class MetodosRaices//:IMetodosRaices
+    public  class MetodosRaices:IMetodosRaices
     {
 
 
-        private double RetornarImagen(string funcion, double xr)
+        public double RetornarValor(string funcion, double xr)
         {
-            //var imagen = new Function(funcion).calculate(xr);
+            var imagen = new Function(funcion).calculate(xr);
+
             return new Function(funcion).calculate(xr);
+
         }
-    }    
+ 
+    }
+
 }
+
