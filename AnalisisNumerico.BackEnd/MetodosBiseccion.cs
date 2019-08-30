@@ -17,7 +17,7 @@ namespace AnalisisNumerico.BackEnd
 
         private double CalcularXrReglaFalsa(double xi, double xd)
         {
-            return ((Funcion(xd)) * xi) - ((Funcion(xi)) * xd) / (Funcion(xd)) - (Funcion(xi));
+            return (((Funcion(xi) * xd) - (Funcion(xd) * xi)) / ((Funcion(xi) - Funcion(xd))));
         }
 
         public static double Funcion(double x)
