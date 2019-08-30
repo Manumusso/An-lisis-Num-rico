@@ -202,7 +202,7 @@
             this.textBox_Funcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Funcion.Location = new System.Drawing.Point(146, 72);
             this.textBox_Funcion.Name = "textBox_Funcion";
-            this.textBox_Funcion.Size = new System.Drawing.Size(158, 29);
+            this.textBox_Funcion.Size = new System.Drawing.Size(273, 29);
             this.textBox_Funcion.TabIndex = 21;
             // 
             // label_Funcion
@@ -249,9 +249,10 @@
             this.Controls.Add(this.textBox_Funcion);
             this.Controls.Add(this.label_Funcion);
             this.Controls.Add(this.label_TitDatosEntrada);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

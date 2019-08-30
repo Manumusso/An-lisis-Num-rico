@@ -26,15 +26,14 @@ namespace AnalisisNumerico.BackEnd
             return valorprueba;
             // return Math.Log(x) + (1 / x) - 3; n ^ p
             //return Math.Abs(Math.Pow(x,2) - 4)+2*x;
-
         }
 
         public Resultados MetodoBiseccionReglaFalsa(Parametros parametros)
         {
 
 
-            double limitizquierdo = 1;
-            double limitederecho = 10;
+            double limitizquierdo = parametros.ValorIzquierdo;
+            double limitederecho = parametros.ValorDerecho;
             double error = 0;
 
             var iteraciones = 10000000;
