@@ -15,91 +15,101 @@ namespace AnalisisNumerico.BackEnd
             return (xi + xd) / 2;
         }
 
-        private double CalcularXrReglaFalsa(double xi, double xd, string pfuncion)
+        private double CalcularXrReglaFalsa(double xi, double xd)
         {
-            return ((RetornarValor(pfuncion, xd) * xi) - (RetornarValor(pfuncion, xi) * xd)) / (RetornarValor(pfuncion, xd) - RetornarValor(pfuncion, xi));
+            return ((Funcion(xd)) * xi) - ((Funcion(xi)) * xd) / (Funcion(xd)) - (Funcion(xi));
+        }
+
+        public static double Funcion(double x)
+        {
+            double valorprueba = ((Math.Pow(x, 5)-1) * Math.Pow(Math.E, x) - 10);
+            return valorprueba;
+            // return Math.Log(x) + (1 / x) - 3; n ^ p
+            //return Math.Abs(Math.Pow(x,2) - 4)+2*x;
+
         }
 
         public Resultados MetodoBiseccionReglaFalsa(Parametros parametros)
         {
-            var funcion = new Function(parametros.Funcion);
-            var arg1 = new Argument("x", parametros.ValorIzquierdo);
-            var arg2 = new Argument("x", parametros.ValorDerecho);
 
-            var nombre = parametros.Funcion.Split('=')[0].Trim();
 
-            var expres1 = new Expression(nombre, funcion, arg1);
-            var expres2 = new Expression(nombre, funcion, arg2);
+            double limitizquierdo = 1;
+            double limitederecho = 10;
+            double error = 0;
+
+            var iteraciones = 10000000;
+            var tolerancia = 0.0001;
+
 
             bool termino = false;
 
             Resultados resultado = new Resultados();
             resultado.Observacion = "";
+            //expres1 Limite izquierd
+            //expres2Limitederecha
 
-            if (expres1.calculate() * expres2.calculate() > 0)
+            if ((Funcion(limitizquierdo) * Funcion(limitederecho)) > 0)
             {
                 resultado.Observacion = "Ingrese otra vez los valores";
                 termino = true;
             }
-            else if (expres1.calculate() * expres2.calculate() == 0)
+            
+            else if (Funcion(limitizquierdo) * Funcion(limitederecho) == 0)
             {
-                if (expres1.calculate() == 0)
+               
+                if (Funcion(limitizquierdo) == 0)
                 {
-                    resultado.Raiz = parametros.ValorIzquierdo;
+                    resultado.Raiz = limitizquierdo;
                 }
                 else
                 {
-                    resultado.Raiz = parametros.ValorDerecho;
+                    resultado.Raiz = limitederecho;
                 }
             }
             else
             {
                 int cInteraciones = 0;
                 double antXr = 0;
-                double Erek1 = 0;
                 double Xr = 0;
 
                 while (!termino)
                 {
                     if (parametros.Finalizo)
                     {
-                        Xr = CalcularXrBiseccion(parametros.ValorIzquierdo, parametros.ValorDerecho);
+                        Xr = CalcularXrBiseccion(limitizquierdo, limitederecho);
                     }
                     else
                     {
-                        Xr = CalcularXrReglaFalsa(parametros.ValorIzquierdo, parametros.ValorDerecho, parametros.Funcion);
+                        Xr = CalcularXrReglaFalsa(limitizquierdo, limitederecho);
                     }
                     cInteraciones++;
 
-                    Erek1 = (Xr - antXr) / Xr; //Ver el caso que divide por 0
+                    error = Math.Abs((Xr - antXr) / Xr); 
 
-                    var argumentoXr = new Argument("x", Xr);
-                    var expresionXr = new Expression(nombre, funcion, argumentoXr);
-
-                    if ((Math.Abs((Xr)) < parametros.Tolerancia) || (cInteraciones > parametros.Iteraciones) || (Math.Abs(Erek1) < parametros.Tolerancia))
+                  
+                    if ((Math.Abs(Funcion(Xr)) < tolerancia) || (cInteraciones > iteraciones) || (Math.Abs(error) < tolerancia))
                     {
                         resultado.Raiz = Xr;
                         termino = true;
                     }
                     else
                     {
-                        var imagenvalorinicial = expres1.calculate();
-                        var imagenvalorxr = RetornarValor(parametros.Funcion, Xr);
-                        if ((expres1.calculate()) * RetornarValor(parametros.Funcion, Xr) > 0)
+                        if (Funcion(limitizquierdo) * (Funcion(Xr)) < 0)
                         {
-                            parametros.ValorIzquierdo = Xr;
+                            limitederecho = Xr;
                         }
                         else
                         {
-                            parametros.ValorDerecho = Xr;
+                            limitizquierdo = Xr;
                         }
                         antXr = Xr;
                     }
 
                 }
                 resultado.Iteraciones = cInteraciones;
-                resultado.Error = Math.Abs(Erek1);
+                error = Math.Abs(error);
             }
+
             return resultado;
         }
 

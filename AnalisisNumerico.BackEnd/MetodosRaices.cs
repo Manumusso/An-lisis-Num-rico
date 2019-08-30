@@ -13,8 +13,7 @@ namespace AnalisisNumerico.BackEnd
 
         public double RetornarValor(string funcion, double xr)
         {
-            var imagen = new Function(funcion).calculate(xr);
-
+        
             return new Function(funcion).calculate(xr);
 
         }

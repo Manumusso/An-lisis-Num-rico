@@ -21,6 +21,7 @@ namespace AnalisisNumerico.Front
 
         private void button_Calcular_Click(object sender, EventArgs e)
         {
+
             var parametros = new Parametros();
             // Se comprueba que no exista texbox sin datos
             if (String.IsNullOrWhiteSpace(textBox_Funcion.Text) ||
@@ -38,24 +39,33 @@ namespace AnalisisNumerico.Front
                 parametros.Tolerancia = double.Parse(textBox_Tolerancia.Text);
                 parametros.ValorDerecho = double.Parse(textBox_ValorDerecho.Text);
                 parametros.ValorIzquierdo = double.Parse(textBox_ValorIzquierdo.Text);
+                //Prueba bisección
                 parametros.Finalizo = true;
 
+
                 MetodosBiseccion Ejecutar = new MetodosBiseccion();
-                var resultado = Ejecutar.MetodoBiseccionReglaFalsa(parametros);
+                Resultados resultado = Ejecutar.MetodoBiseccionReglaFalsa(parametros);
+
+
 
                 //textBox_Raiz.Text = MetodosTangente.Calcular(parametros).ToString();
 
                 if (resultado.Observacion == "")
                 {
-                    textBox_Error.Text = resultado.Error.ToString("N8");
-                    textBox_Iteraciones.Text = resultado.Iteraciones.ToString();
-                    textBox_Raiz.Text = resultado.Raiz.ToString("N8");
+                    textBox_Error.Text = resultado.Error.ToString();
+                    textBox_IteracionesR.Text = resultado.Iteraciones.ToString();
+                    textBox_Raiz.Text = resultado.Raiz.ToString();
                 }
                 else
                 {
                     MessageBox.Show("Los extremos ingresados no son válidos", "Notificación", MessageBoxButtons.OK);
                 }
             }
+        }
+
+        private void textBox_Raiz_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
