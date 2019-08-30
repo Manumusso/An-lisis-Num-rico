@@ -1,0 +1,12 @@
+C:\Users\matib\Documents\Analisis Numerico\AnalisisNumerico.FrontEnd\bin\Debug\AnalisisNumerico.FrontEnd.dll
+C:\Users\matib\Documents\Analisis Numerico\AnalisisNumerico.FrontEnd\bin\Debug\AnalisisNumerico.FrontEnd.pdb
+C:\Users\matib\Documents\Analisis Numerico\AnalisisNumerico.FrontEnd\bin\Debug\AnalisisNumerico.BackEnd.dll
+C:\Users\matib\Documents\Analisis Numerico\AnalisisNumerico.FrontEnd\bin\Debug\MathParser.org-mXparser.dll
+C:\Users\matib\Documents\Analisis Numerico\AnalisisNumerico.FrontEnd\bin\Debug\AnalisisNumerico.BackEnd.pdb
+C:\Users\matib\Documents\Analisis Numerico\AnalisisNumerico.FrontEnd\obj\Debug\AnalisisNumerico.FrontEnd.csprojAssemblyReference.cache
+C:\Users\matib\Documents\Analisis Numerico\AnalisisNumerico.FrontEnd\obj\Debug\AnalisisNumerico.FrontEnd.MetodosRaicesMenu.MenuPrincipalRaices.resources
+C:\Users\matib\Documents\Analisis Numerico\AnalisisNumerico.FrontEnd\obj\Debug\AnalisisNumerico.FrontEnd.csproj.GenerateResource.cache
+C:\Users\matib\Documents\Analisis Numerico\AnalisisNumerico.FrontEnd\obj\Debug\AnalisisNumerico.FrontEnd.csproj.CoreCompileInputs.cache
+C:\Users\matib\Documents\Analisis Numerico\AnalisisNumerico.FrontEnd\obj\Debug\AnalisisNumerico.FrontEnd.csproj.CopyComplete
+C:\Users\matib\Documents\Analisis Numerico\AnalisisNumerico.FrontEnd\obj\Debug\AnalisisNumerico.FrontEnd.dll
+C:\Users\matib\Documents\Analisis Numerico\AnalisisNumerico.FrontEnd\obj\Debug\AnalisisNumerico.FrontEnd.pdb
