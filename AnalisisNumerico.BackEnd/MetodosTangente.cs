@@ -16,68 +16,53 @@ namespace AnalisisNumerico.BackEnd
         //double ValorDerecho 
         //bool Finalizo 
 
-     
 
-        public Parametros asd(Parametros parametros)
+
+        public static double Funcion(double x)
         {
-            return null;
+            return ((15.2 * (x + 2)) / (Math.Pow(x, 2) + 4 * x + 5)) + 2;
+            // return Math.Log(x) + (1 / x) - 3;
+            //return Math.Abs(Math.Pow(x,2) - 4)+2*x;
+
         }
-
-        public static Resultados Calcular(Parametros parametros)
+            public static Resultados Calcular(Parametros parametros)
         {
-            double valorX = parametros.ValorDerecho;
-            bool flag = true;
-            double xR = 0;
+            var cont = 0;
+            double xIni = 4;
+            double xR = xIni;
             double xAnt = 0;
             double error = 0;
-            var cont = 0;
 
-            Function func = new Function("F(x) = " + parametros.Funcion);
-            //Expression ex = (new Expression($"F({valorX})", func));
+            var iteraciones = 10000000;
+            var tolerancia = 0.0001;
 
-            Expression ex = (new Expression($"F({valorX})", func));
-            var ResultValorX = ex.calculate();
-
-            while (flag)
+            while (Math.Abs(Funcion(xR))>xR)
             {
+                cont++;
 
-                if (Math.Abs(ResultValorX) <= parametros.Tolerancia)
+                var deri = (Funcion(xIni + tolerancia) - Funcion(xIni)) / tolerancia;
+
+                xR = xIni - (Funcion(xIni) / deri);
+
+                error = Math.Abs((xR - xAnt) / xR);
+
+                if(error < tolerancia || cont >= iteraciones)
                 {
-                    return new Resultados()
-                    {
-                        Raiz = valorX,
-                    };
+                    break;
                 }
                 else
                 {
-                    cont++;
-                    Double val = ((new Expression($"F({valorX + parametros.Tolerancia})", func)).calculate() - ResultValorX);
-                    double derivadaEnX = val / parametros.Tolerancia;
-                    xR = (valorX - ResultValorX) / derivadaEnX;
-
-                    error = Math.Abs(xR - xAnt) / xR;
-
-
-                    ex = (new Expression($"F({xR})", func));
-                    ResultValorX = ex.calculate();
-
-                    if(error < parametros.Tolerancia || cont >= parametros.Iteraciones)
-                    {
-                        return new Resultados()
-                        {
-                            Raiz = valorX,
-                        };
-                    }
-
-                    valorX = xR;
+                    xIni = xR;
                     xAnt = xR;
                 }
-
             }
-
-            return null;            
+            return new Resultados()
+            {
+                Raiz = xR,
+                Error = error,
+                Iteraciones = cont,
+                Observacion = ""
+            };
         }
-
-
     }
 }

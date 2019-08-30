@@ -17,15 +17,22 @@ namespace AnalisisNumerico.Front
         public Form1()
         {
             InitializeComponent();
+            textBox_Funcion.Text = "f(x)=((x^5)-1)e^x-10=0";
+            textBox_Iteraciones.Text = "100";
+            textBox_Tolerancia.Text = "0,0001";
+
+            textBox_Funcion.Enabled = false;
+            textBox_Iteraciones.Enabled = false;
+            textBox_Tolerancia.Enabled = false;
         }
+
 
         private void button_Calcular_Click(object sender, EventArgs e)
         {
+
             var parametros = new Parametros();
             // Se comprueba que no exista texbox sin datos
-            if (String.IsNullOrWhiteSpace(textBox_Funcion.Text) ||
-                String.IsNullOrWhiteSpace(textBox_Tolerancia.Text) ||
-               String.IsNullOrWhiteSpace(textBox_Iteraciones.Text) ||
+            if (
                String.IsNullOrWhiteSpace(textBox_ValorDerecho.Text) ||
                String.IsNullOrWhiteSpace(textBox_ValorIzquierdo.Text))
             {
@@ -33,23 +40,29 @@ namespace AnalisisNumerico.Front
             }
             else
             {
-                parametros.Funcion = textBox_Funcion.Text;
-                parametros.Iteraciones = int.Parse(textBox_Iteraciones.Text);
-                parametros.Tolerancia = double.Parse(textBox_Tolerancia.Text);
                 parametros.ValorDerecho = double.Parse(textBox_ValorDerecho.Text);
                 parametros.ValorIzquierdo = double.Parse(textBox_ValorIzquierdo.Text);
+                //Prueba bisección
                 parametros.Finalizo = true;
 
+                /*Prueba Regla Falsa
+                 * 
+                parametros.Finalizo = false;
+
+                 */
+
                 MetodosBiseccion Ejecutar = new MetodosBiseccion();
-                var resultado = Ejecutar.MetodoBiseccionReglaFalsa(parametros);
+                Resultados resultado = Ejecutar.MetodoBiseccionReglaFalsa(parametros);
+
+
 
                 //textBox_Raiz.Text = MetodosTangente.Calcular(parametros).ToString();
 
                 if (resultado.Observacion == "")
                 {
-                    textBox_Error.Text = resultado.Error.ToString("N8");
-                    textBox_Iteraciones.Text = resultado.Iteraciones.ToString();
-                    textBox_Raiz.Text = resultado.Raiz.ToString("N8");
+                    textBox_Error.Text = resultado.Error.ToString();
+                    textBox_IteracionesR.Text = resultado.Iteraciones.ToString();
+                    textBox_Raiz.Text = resultado.Raiz.ToString();
                 }
                 else
                 {
@@ -57,5 +70,16 @@ namespace AnalisisNumerico.Front
                 }
             }
         }
+
+        private void textBox_Raiz_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
