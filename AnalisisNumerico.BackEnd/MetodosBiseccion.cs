@@ -10,6 +10,10 @@ namespace AnalisisNumerico.BackEnd
 {
     public class MetodosBiseccion : MetodosRaices
     {
+        public MetodosBiseccion(Funcion enume) : base(enume)
+        {
+        }
+
         private double CalcularXrBiseccion(double xi, double xd)
         {
             return (xi + xd) / 2;

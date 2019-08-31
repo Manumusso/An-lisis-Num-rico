@@ -12,16 +12,24 @@ using System.Windows.Forms;
 
 namespace AnalisisNumerico.Front
 {
+    enum Metodo
+    {
+        TANGENTE,
+        BISECCION,
+        REGLAFALSA,
+        SECANTE,
+    }
     public partial class Form1 : Form
     {
+        Funcion Funcion;
+        Metodo Metodo;
+
         public Form1()
         {
             InitializeComponent();
-            textBox_Funcion.Text = "f(x)=((x^5)-1)e^x-10=0";
             textBox_Iteraciones.Text = "100";
             textBox_Tolerancia.Text = "0,0001";
-
-            textBox_Funcion.Enabled = false;
+            
             textBox_Iteraciones.Enabled = false;
             textBox_Tolerancia.Enabled = false;
         }
@@ -44,16 +52,36 @@ namespace AnalisisNumerico.Front
                 parametros.ValorIzquierdo = double.Parse(textBox_ValorIzquierdo.Text);
                 //Prueba bisección
                 parametros.Finalizo = true;
-
-                /*Prueba Regla Falsa
-                 * 
-                parametros.Finalizo = false;
-
-                 */
-
-                MetodosBiseccion Ejecutar = new MetodosBiseccion();
-                Resultados resultado = Ejecutar.MetodoBiseccionReglaFalsa(parametros);
-
+                Resultados resultado
+                switch (Metodo)
+                {
+                    case Metodo.TANGENTE:
+                        {
+                            MetodosTangente Ejecutar = new MetodosTangente(Funcion);
+                            Resultados resultado = Ejecutar.Calcular(parametros);
+                            break;
+                        }
+                    case Metodo.BISECCION:
+                        {
+                            MetodosBiseccion Ejecutar = new MetodosBiseccion(Funcion);
+                            Resultados resultado = Ejecutar.MetodoBiseccionReglaFalsa(parametros);
+                            break;
+                        }
+                    case Metodo.REGLAFALSA:
+                        {
+                            MetodosBiseccion Ejecutar = new MetodosRaices(Funcion);
+                            Resultados resultado = Ejecutar.MetodoBiseccionReglaFalsa(parametros);
+                            break;
+                        }
+                    case Metodo.SECANTE:
+                        {
+                            MetodoSecante Ejecutar = new MetodoSecante(Funcion);
+                            Resultados resultado = Ejecutar.MetodoBiseccionReglaFalsa(parametros);
+                            break;
+                        }
+                    default:
+                        break;
+                }
 
 
                 //textBox_Raiz.Text = MetodosTangente.Calcular(parametros).ToString();
@@ -75,11 +103,71 @@ namespace AnalisisNumerico.Front
         {
 
         }
-
         private void Form1_Load(object sender, EventArgs e)
         {
 
         }
+        private void label1_Click(object sender, EventArgs e)
+        {
 
+        }
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+        }
+
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            Funcion = Funcion.ACTIVIDAD1;
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            Funcion = Funcion.ACTIVIDAD2;
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            Funcion = Funcion.ACTIVIDAD3;
+        }
+
+        private void radioButton4_CheckedChanged(object sender, EventArgs e)
+        {
+            Funcion = Funcion.ACTIVIDAD4;
+        }
+
+        private void radioButton10_CheckedChanged(object sender, EventArgs e)
+        {
+            Funcion = Funcion.ACTIVIDAD5A;
+        }
+
+        private void radioButton9_CheckedChanged(object sender, EventArgs e)
+        {
+            Funcion = Funcion.ACTIVIDAD5B;
+        }
+
+
+
+
+        private void radioButton5_CheckedChanged(object sender, EventArgs e)
+        {
+            Metodo = Metodo.TANGENTE;
+        }
+        private void radioButton6_CheckedChanged(object sender, EventArgs e)
+        {
+            Metodo = Metodo.SECANTE;
+        }
+        private void radioButton7_CheckedChanged(object sender, EventArgs e)
+        {
+            Metodo = Metodo.BISECCION;
+        }
+        private void radioButton8_CheckedChanged(object sender, EventArgs e)
+        {
+            Metodo = Metodo.REGLAFALSA;
+        }
     }
 }

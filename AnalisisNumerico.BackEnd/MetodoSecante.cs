@@ -8,6 +8,14 @@ namespace AnalisisNumerico.BackEnd
 {
     class MetodoSecante: MetodosRaices
     {
+        public MetodoSecante(Funcion enume) : base(enume)
+        {
 
+        }
+
+        public Resultados Calcular(Parametros parametros)
+        {
+            return null;
+        }
     }
 }
