@@ -17,9 +17,9 @@ namespace AnalisisNumerico.BackEnd
         ACTIVIDAD5A,
         ACTIVIDAD5B
     }
-    public  class MetodosRaices
+    public class MetodosRaices
     {
-        public Funcion actividad { get { return actividad; } set { } }
+        public Funcion actividad;
 
         public MetodosRaices(Funcion func)
         {
@@ -32,7 +32,7 @@ namespace AnalisisNumerico.BackEnd
             {
                 case BackEnd.Funcion.ACTIVIDAD1:
                     {
-                        return 0;
+                        return ((Math.Pow(x,5)-1)*Math.Pow(Math.E,x))-1;
                         break;
                     }
                 case BackEnd.Funcion.ACTIVIDAD2:
@@ -52,12 +52,12 @@ namespace AnalisisNumerico.BackEnd
                     }
                 case BackEnd.Funcion.ACTIVIDAD5A:
                     {
-                        return 0;
+                        return Math.Pow(x,2)-3*x+Math.Log(1+x);
                         break;
                     }
                 case BackEnd.Funcion.ACTIVIDAD5B:
                     {
-                        return 0;
+                        return 5-(Math.Pow(x,0.5));
                         break;
                     }
                 default:

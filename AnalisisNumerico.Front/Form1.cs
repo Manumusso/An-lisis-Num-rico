@@ -27,11 +27,6 @@ namespace AnalisisNumerico.Front
         public Form1()
         {
             InitializeComponent();
-            textBox_Iteraciones.Text = "100";
-            textBox_Tolerancia.Text = "0,0001";
-            
-            textBox_Iteraciones.Enabled = false;
-            textBox_Tolerancia.Enabled = false;
         }
 
 
@@ -50,52 +45,51 @@ namespace AnalisisNumerico.Front
             {
                 parametros.ValorDerecho = double.Parse(textBox_ValorDerecho.Text);
                 parametros.ValorIzquierdo = double.Parse(textBox_ValorIzquierdo.Text);
+                parametros.Iteraciones = int.Parse(textBox_Iteraciones.Text);
+                parametros.Tolerancia = double.Parse(textBox_Tolerancia.Text);
                 //Prueba bisección
                 parametros.Finalizo = true;
-                Resultados resultado
+                Resultados resultado;
                 switch (Metodo)
                 {
                     case Metodo.TANGENTE:
                         {
                             MetodosTangente Ejecutar = new MetodosTangente(Funcion);
-                            Resultados resultado = Ejecutar.Calcular(parametros);
+                            resultado = Ejecutar.Calcular(parametros);
                             break;
                         }
                     case Metodo.BISECCION:
                         {
                             MetodosBiseccion Ejecutar = new MetodosBiseccion(Funcion);
-                            Resultados resultado = Ejecutar.MetodoBiseccionReglaFalsa(parametros);
+                            resultado = Ejecutar.MetodoBiseccionReglaFalsa(parametros);
                             break;
                         }
                     case Metodo.REGLAFALSA:
                         {
-                            MetodosBiseccion Ejecutar = new MetodosRaices(Funcion);
-                            Resultados resultado = Ejecutar.MetodoBiseccionReglaFalsa(parametros);
+                            MetodosBiseccion Ejecutar = new MetodosBiseccion(Funcion);
+                            parametros.Finalizo = false;
+                            resultado = Ejecutar.MetodoBiseccionReglaFalsa(parametros);
                             break;
                         }
                     case Metodo.SECANTE:
                         {
                             MetodoSecante Ejecutar = new MetodoSecante(Funcion);
-                            Resultados resultado = Ejecutar.MetodoBiseccionReglaFalsa(parametros);
+                            resultado = Ejecutar.Calcular(parametros);
                             break;
                         }
                     default:
+                        resultado = new Resultados();
                         break;
                 }
 
 
                 //textBox_Raiz.Text = MetodosTangente.Calcular(parametros).ToString();
 
-                if (resultado.Observacion == "")
-                {
+                
                     textBox_Error.Text = resultado.Error.ToString();
                     textBox_IteracionesR.Text = resultado.Iteraciones.ToString();
                     textBox_Raiz.Text = resultado.Raiz.ToString();
-                }
-                else
-                {
-                    MessageBox.Show("Los extremos ingresados no son válidos", "Notificación", MessageBoxButtons.OK);
-                }
+                
             }
         }
 

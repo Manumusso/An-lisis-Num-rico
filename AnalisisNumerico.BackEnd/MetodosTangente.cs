@@ -31,7 +31,7 @@ namespace AnalisisNumerico.BackEnd
             var iteraciones = parametros.Iteraciones;
             var tolerancia = parametros.Tolerancia;
 
-            while (Math.Abs(Funcion(xR))>xR)
+            while (Math.Abs(Funcion(xR))>parametros.Tolerancia)
             {
                 cont++;
 

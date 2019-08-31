@@ -24,24 +24,14 @@ namespace AnalisisNumerico.BackEnd
             return (((Funcion(xi) * xd) - (Funcion(xd) * xi)) / ((Funcion(xi) - Funcion(xd))));
         }
 
-        public static double Funcion(double x)
-        {
-            double valorprueba = ((Math.Pow(x, 5)-1) * Math.Pow(Math.E, x) - 10);
-            return valorprueba;
-            // return Math.Log(x) + (1 / x) - 3; n ^ p
-            //return Math.Abs(Math.Pow(x,2) - 4)+2*x;
-        }
-
         public Resultados MetodoBiseccionReglaFalsa(Parametros parametros)
         {
-
-
             double limitizquierdo = parametros.ValorIzquierdo;
             double limitederecho = parametros.ValorDerecho;
             double error = 0;
 
-            var iteraciones = 10000000;
-            var tolerancia = 0.0001;
+            var iteraciones = parametros.Iteraciones;
+            var tolerancia = parametros.Tolerancia;
 
 
             bool termino = false;
@@ -111,6 +101,8 @@ namespace AnalisisNumerico.BackEnd
                 }
                 resultado.Iteraciones = cInteraciones;
                 error = Math.Abs(error);
+                resultado.Error = error;
+                resultado.Observacion = "";
             }
 
             return resultado;
