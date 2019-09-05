@@ -32,7 +32,9 @@ namespace AnalisisNumerico.BackEnd
             {
                 case BackEnd.Funcion.ACTIVIDAD1:
                     {
-                        return ((Math.Pow(x,5)-1)*Math.Pow(Math.E,x))-1;
+
+                        return ((Math.Pow(x, 5)-1) * (Math.Pow(Math.E, x)) - 10);
+
                         break;
                     }
                 case BackEnd.Funcion.ACTIVIDAD2:

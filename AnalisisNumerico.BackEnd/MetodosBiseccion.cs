@@ -26,8 +26,8 @@ namespace AnalisisNumerico.BackEnd
 
         public Resultados MetodoBiseccionReglaFalsa(Parametros parametros)
         {
-            double limitizquierdo = parametros.ValorIzquierdo;
-            double limitederecho = parametros.ValorDerecho;
+            double limitizquierdo = parametros.ValorDerecho;
+            double limitederecho = parametros.ValorIzquierdo;
             double error = 0;
 
             var iteraciones = parametros.Iteraciones;
@@ -37,9 +37,7 @@ namespace AnalisisNumerico.BackEnd
             bool termino = false;
 
             Resultados resultado = new Resultados();
-            resultado.Observacion = "";
-            //expres1 Limite izquierd
-            //expres2Limitederecha
+
 
             if ((Funcion(limitizquierdo) * Funcion(limitederecho)) > 0)
             {
@@ -80,14 +78,14 @@ namespace AnalisisNumerico.BackEnd
                     error = Math.Abs((Xr - antXr) / Xr); 
 
                   
-                    if ((Math.Abs(Funcion(Xr)) < tolerancia) || (cInteraciones > iteraciones) || (Math.Abs(error) < tolerancia))
+                    if ((Math.Abs(Funcion(Xr)) < tolerancia) || (cInteraciones > iteraciones) || (error < tolerancia))
                     {
                         resultado.Raiz = Xr;
                         termino = true;
                     }
                     else
                     {
-                        if (Funcion(limitizquierdo) * (Funcion(Xr)) < 0)
+                        if (Funcion(limitizquierdo) * (Funcion(limitederecho)) < 0)
                         {
                             limitederecho = Xr;
                         }
@@ -100,7 +98,6 @@ namespace AnalisisNumerico.BackEnd
 
                 }
                 resultado.Iteraciones = cInteraciones;
-                error = Math.Abs(error);
                 resultado.Error = error;
                 resultado.Observacion = "";
             }
