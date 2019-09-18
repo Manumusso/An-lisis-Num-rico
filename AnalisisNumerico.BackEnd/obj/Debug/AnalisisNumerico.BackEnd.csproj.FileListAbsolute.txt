@@ -6,3 +6,11 @@ C:\Users\matib\Documents\Analisis Numerico\AnalisisNumerico.BackEnd\obj\Debug\An
 C:\Users\matib\Documents\Analisis Numerico\AnalisisNumerico.BackEnd\obj\Debug\AnalisisNumerico.BackEnd.csproj.CopyComplete
 C:\Users\matib\Documents\Analisis Numerico\AnalisisNumerico.BackEnd\obj\Debug\AnalisisNumerico.BackEnd.dll
 C:\Users\matib\Documents\Analisis Numerico\AnalisisNumerico.BackEnd\obj\Debug\AnalisisNumerico.BackEnd.pdb
+C:\Users\USER\Desktop\TPOFI2\AnalisisNumerico.BackEnd\bin\Debug\AnalisisNumerico.BackEnd.dll
+C:\Users\USER\Desktop\TPOFI2\AnalisisNumerico.BackEnd\bin\Debug\AnalisisNumerico.BackEnd.pdb
+C:\Users\USER\Desktop\TPOFI2\AnalisisNumerico.BackEnd\bin\Debug\MathParser.org-mXparser.dll
+C:\Users\USER\Desktop\TPOFI2\AnalisisNumerico.BackEnd\obj\Debug\AnalisisNumerico.BackEnd.csprojAssemblyReference.cache
+C:\Users\USER\Desktop\TPOFI2\AnalisisNumerico.BackEnd\obj\Debug\AnalisisNumerico.BackEnd.csproj.CoreCompileInputs.cache
+C:\Users\USER\Desktop\TPOFI2\AnalisisNumerico.BackEnd\obj\Debug\AnalisisNumerico.BackEnd.csproj.CopyComplete
+C:\Users\USER\Desktop\TPOFI2\AnalisisNumerico.BackEnd\obj\Debug\AnalisisNumerico.BackEnd.dll
+C:\Users\USER\Desktop\TPOFI2\AnalisisNumerico.BackEnd\obj\Debug\AnalisisNumerico.BackEnd.pdb

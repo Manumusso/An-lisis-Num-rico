@@ -12,3 +12,17 @@ C:\Users\matib\Documents\Analisis Numerico\AnalisisNumerico.Front\obj\Debug\Anal
 C:\Users\matib\Documents\Analisis Numerico\AnalisisNumerico.Front\obj\Debug\AnalisisNumerico.Front.csproj.CopyComplete
 C:\Users\matib\Documents\Analisis Numerico\AnalisisNumerico.Front\obj\Debug\AnalisisNumerico.Front.exe
 C:\Users\matib\Documents\Analisis Numerico\AnalisisNumerico.Front\obj\Debug\AnalisisNumerico.Front.pdb
+C:\Users\USER\Desktop\TPOFI2\AnalisisNumerico.Front\bin\Debug\AnalisisNumerico.Front.exe.config
+C:\Users\USER\Desktop\TPOFI2\AnalisisNumerico.Front\bin\Debug\AnalisisNumerico.Front.exe
+C:\Users\USER\Desktop\TPOFI2\AnalisisNumerico.Front\bin\Debug\AnalisisNumerico.Front.pdb
+C:\Users\USER\Desktop\TPOFI2\AnalisisNumerico.Front\bin\Debug\AnalisisNumerico.BackEnd.dll
+C:\Users\USER\Desktop\TPOFI2\AnalisisNumerico.Front\bin\Debug\AnalisisNumerico.BackEnd.pdb
+C:\Users\USER\Desktop\TPOFI2\AnalisisNumerico.Front\obj\Debug\AnalisisNumerico.Front.csprojAssemblyReference.cache
+C:\Users\USER\Desktop\TPOFI2\AnalisisNumerico.Front\obj\Debug\AnalisisNumerico.Front.Form1.resources
+C:\Users\USER\Desktop\TPOFI2\AnalisisNumerico.Front\obj\Debug\AnalisisNumerico.Front.Properties.Resources.resources
+C:\Users\USER\Desktop\TPOFI2\AnalisisNumerico.Front\obj\Debug\AnalisisNumerico.Front.csproj.GenerateResource.cache
+C:\Users\USER\Desktop\TPOFI2\AnalisisNumerico.Front\obj\Debug\AnalisisNumerico.Front.csproj.CoreCompileInputs.cache
+C:\Users\USER\Desktop\TPOFI2\AnalisisNumerico.Front\obj\Debug\AnalisisNumerico.Front.csproj.CopyComplete
+C:\Users\USER\Desktop\TPOFI2\AnalisisNumerico.Front\obj\Debug\AnalisisNumerico.Front.exe
+C:\Users\USER\Desktop\TPOFI2\AnalisisNumerico.Front\obj\Debug\AnalisisNumerico.Front.pdb
+C:\Users\USER\Desktop\TPOFI2\AnalisisNumerico.Front\obj\Debug\AnalisisNumerico.Front.Form2.resources
