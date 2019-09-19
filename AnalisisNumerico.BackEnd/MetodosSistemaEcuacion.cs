@@ -190,5 +190,64 @@ namespace AnalisisNumerico.BackEnd
                 }
             }
         }
+
+
+
+
+        public ResultadoEcuacionesMatriz GaussSeidel(double[,] matriz, ParametrosEcuaciones param)
+        {
+            int DD = 0;
+            for (int x = 0; x < param.NumIncognitas; x++)
+            {
+                double sum = 0;
+                for (int y = 0; y < param.NumIncognitas; y++)
+                {
+                    if (x != y)
+                        sum += matriz[x, y];
+                }
+                if (Math.Abs(sum) < Math.Abs(matriz[x, x]))
+                    DD++;
+            }
+
+            if (DD == 0)
+                return null;
+
+            double tolerancia = param.Tolerancia;
+            int iteraciones = param.Iteraciones;
+            int contador = 0;
+
+            double[] Resultado = new double[param.NumIncognitas];
+            double auxiliar;
+            double[] ResultadoAnterior = new double[param.NumIncognitas];
+            bool flag = true;
+
+            while (flag == true & iteraciones >= contador)
+            {
+                contador++;
+                if (contador > 1)
+                    Resultado.CopyTo(ResultadoAnterior, 0);
+
+                for (int x = 0; x < param.NumIncognitas; x++)
+                {
+                    auxiliar = matriz[x, param.NumIncognitas];
+                    for (int y = 0; y < param.NumIncognitas; y++)
+                    {
+                        if (x != y)
+                            auxiliar -= (matriz[x, y] * Resultado[y]);
+                    }
+                    Resultado[x] = Convert.ToDouble(auxiliar) / Convert.ToDouble(matriz[x, x]); ;
+
+                    if (Math.Abs(Resultado[x] - ResultadoAnterior[x]) <= tolerancia)
+                    {
+                        flag = false;
+                    }
+                }
+            }
+            ResultadoEcuacionesMatriz resultado = new ResultadoEcuacionesMatriz();
+            resultado.convergio = !flag;
+            resultado.iteraciones = contador;
+            resultado.Resultados = Resultado;
+            return resultado;
+        }
     }
 }

@@ -11,6 +11,7 @@ namespace AnalisisNumerico.BackEnd
         public int NumIncognitas { get; set; }
         public List<double> Coeficientes { get; set; }
         public double Tolerancia { get; set; }
+        public int Iteraciones { get; set; }
 
         public ParametrosEcuaciones()
         {

@@ -10,12 +10,23 @@ namespace AnalisisNumerico.BackEnd
     {
 
         public List<double> Resultados { get; set; }
+        public int iteraciones { get; set; }
+        public bool convergio { get; set; }
+
         public ResultadoEcuaciones()
         {
             this.Resultados = new List<double>();
         }
+    }
 
 
+    public class ResultadoEcuacionesMatriz
+    {
+
+        public double[] Resultados { get; set; }
+        public int iteraciones { get; set; }
+        public bool convergio { get; set; }
 
     }
+
 }
