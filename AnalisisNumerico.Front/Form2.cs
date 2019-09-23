@@ -112,7 +112,7 @@ namespace AnalisisNumerico.Front
 
             if(!resultado.convergio)
             {
-                MessageBox.Show("Este sistemas es diagonalmente dominante parcial pero no converge", "NO CONVERGE", MessageBoxButtons.OK);
+                MessageBox.Show("Este sistemas es diagonalmente dominante parcial y no converge", "NO CONVERGE", MessageBoxButtons.OK);
                 return;
             }
 

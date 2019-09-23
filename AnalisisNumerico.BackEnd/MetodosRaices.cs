@@ -15,7 +15,8 @@ namespace AnalisisNumerico.BackEnd
         ACTIVIDAD4,
 
         ACTIVIDAD5A,
-        ACTIVIDAD5B
+        ACTIVIDAD5B,
+        PARAPARCIAL
     }
     public class MetodosRaices
     {
@@ -59,18 +60,19 @@ namespace AnalisisNumerico.BackEnd
                     }
                 case BackEnd.Funcion.ACTIVIDAD5B:
                     {
-                        return 5-(Math.Pow(x,0.5));
+                        return 5 - (Math.Pow(x, 0.5));
+                        break;
+                    }
+                //ESTE METODO ES PARA MODIFICAR EN EL PARCIAL PARA QUE WORKEE
+                case BackEnd.Funcion.PARAPARCIAL:
+                    {
+                        return Math.Pow(x+2,2);
                         break;
                     }
                 default:
                         return 0;
                     break;
             }
-
-            
-            // 
-            
-
         }
 
     }

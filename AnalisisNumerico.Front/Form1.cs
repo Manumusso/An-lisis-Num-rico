@@ -144,6 +144,10 @@ namespace AnalisisNumerico.Front
             Funcion = Funcion.ACTIVIDAD5B;
         }
 
+        private void radioButton11_CheckedChanged(object sender, EventArgs e)
+        {
+            Funcion = Funcion.PARAPARCIAL;
+        }
 
 
 
@@ -163,5 +167,6 @@ namespace AnalisisNumerico.Front
         {
             Metodo = Metodo.REGLAFALSA;
         }
+
     }
 }
