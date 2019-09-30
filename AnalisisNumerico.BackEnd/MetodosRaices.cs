@@ -16,16 +16,26 @@ namespace AnalisisNumerico.BackEnd
 
         ACTIVIDAD5A,
         ACTIVIDAD5B,
-        PARAPARCIAL
+        PARAPARCIAL,
+        PORTEXTO
     }
     public class MetodosRaices
     {
         public Funcion actividad;
+        org.mariuszgromada.math.mxparser.Function func;
 
         public MetodosRaices(Funcion func)
         {
             actividad = func;
         }
+
+
+        public MetodosRaices(Funcion func, string Fun)
+        {
+            actividad = func;
+            this.func = new Function(Fun);
+        }
+
 
         public double Funcion(double x)
         {
@@ -67,6 +77,15 @@ namespace AnalisisNumerico.BackEnd
                 case BackEnd.Funcion.PARAPARCIAL:
                     {
                         return Math.Pow(x+2,2);
+                        break;
+                    }
+                case BackEnd.Funcion.PORTEXTO:
+                    {
+                        var argumento1 = new Argument("x", x);
+                        var expresion1 = new Expression(this.func, argumento1);
+
+                        return expresion1.calculate();
+
                         break;
                     }
                 default:

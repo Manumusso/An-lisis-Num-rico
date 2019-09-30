@@ -44,7 +44,6 @@
             this.textBox_Iteraciones = new System.Windows.Forms.TextBox();
             this.label_Iteraciones = new System.Windows.Forms.Label();
             this.label_Funcion = new System.Windows.Forms.Label();
-            this.label_TitDatosEntrada = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
@@ -59,8 +58,11 @@
             this.radioButton10 = new System.Windows.Forms.RadioButton();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.radioButton11 = new System.Windows.Forms.RadioButton();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.radioButton12 = new System.Windows.Forms.RadioButton();
+            this.label4 = new System.Windows.Forms.Label();
+            this.tbFuncion = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -141,7 +143,7 @@
             // textBox_ValorDerecho
             // 
             this.textBox_ValorDerecho.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_ValorDerecho.Location = new System.Drawing.Point(580, 134);
+            this.textBox_ValorDerecho.Location = new System.Drawing.Point(580, 101);
             this.textBox_ValorDerecho.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_ValorDerecho.Name = "textBox_ValorDerecho";
             this.textBox_ValorDerecho.Size = new System.Drawing.Size(165, 34);
@@ -151,7 +153,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(324, 126);
+            this.label3.Location = new System.Drawing.Point(324, 93);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(230, 29);
@@ -161,7 +163,7 @@
             // textBox_ValorIzquierdo
             // 
             this.textBox_ValorIzquierdo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_ValorIzquierdo.Location = new System.Drawing.Point(580, 202);
+            this.textBox_ValorIzquierdo.Location = new System.Drawing.Point(580, 169);
             this.textBox_ValorIzquierdo.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_ValorIzquierdo.Name = "textBox_ValorIzquierdo";
             this.textBox_ValorIzquierdo.Size = new System.Drawing.Size(165, 34);
@@ -171,7 +173,7 @@
             // 
             this.label_ValorIzquierdo.AutoSize = true;
             this.label_ValorIzquierdo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_ValorIzquierdo.Location = new System.Drawing.Point(310, 205);
+            this.label_ValorIzquierdo.Location = new System.Drawing.Point(310, 172);
             this.label_ValorIzquierdo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_ValorIzquierdo.Name = "label_ValorIzquierdo";
             this.label_ValorIzquierdo.Size = new System.Drawing.Size(244, 29);
@@ -181,7 +183,7 @@
             // textBox_Tolerancia
             // 
             this.textBox_Tolerancia.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_Tolerancia.Location = new System.Drawing.Point(580, 270);
+            this.textBox_Tolerancia.Location = new System.Drawing.Point(580, 237);
             this.textBox_Tolerancia.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_Tolerancia.Name = "textBox_Tolerancia";
             this.textBox_Tolerancia.Size = new System.Drawing.Size(165, 34);
@@ -191,7 +193,7 @@
             // 
             this.label_Tolerancia.AutoSize = true;
             this.label_Tolerancia.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Tolerancia.Location = new System.Drawing.Point(379, 273);
+            this.label_Tolerancia.Location = new System.Drawing.Point(379, 240);
             this.label_Tolerancia.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_Tolerancia.Name = "label_Tolerancia";
             this.label_Tolerancia.Size = new System.Drawing.Size(175, 29);
@@ -201,7 +203,7 @@
             // textBox_Iteraciones
             // 
             this.textBox_Iteraciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_Iteraciones.Location = new System.Drawing.Point(580, 66);
+            this.textBox_Iteraciones.Location = new System.Drawing.Point(580, 33);
             this.textBox_Iteraciones.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_Iteraciones.Name = "textBox_Iteraciones";
             this.textBox_Iteraciones.Size = new System.Drawing.Size(165, 34);
@@ -211,7 +213,7 @@
             // 
             this.label_Iteraciones.AutoSize = true;
             this.label_Iteraciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Iteraciones.Location = new System.Drawing.Point(368, 69);
+            this.label_Iteraciones.Location = new System.Drawing.Point(368, 36);
             this.label_Iteraciones.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_Iteraciones.Name = "label_Iteraciones";
             this.label_Iteraciones.Size = new System.Drawing.Size(186, 29);
@@ -222,29 +224,18 @@
             // 
             this.label_Funcion.AutoSize = true;
             this.label_Funcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Funcion.Location = new System.Drawing.Point(13, 89);
+            this.label_Funcion.Location = new System.Drawing.Point(13, 45);
             this.label_Funcion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_Funcion.Name = "label_Funcion";
             this.label_Funcion.Size = new System.Drawing.Size(137, 29);
             this.label_Funcion.TabIndex = 20;
             this.label_Funcion.Text = "FUNCION:";
             // 
-            // label_TitDatosEntrada
-            // 
-            this.label_TitDatosEntrada.AutoSize = true;
-            this.label_TitDatosEntrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_TitDatosEntrada.Location = new System.Drawing.Point(225, 9);
-            this.label_TitDatosEntrada.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label_TitDatosEntrada.Name = "label_TitDatosEntrada";
-            this.label_TitDatosEntrada.Size = new System.Drawing.Size(307, 31);
-            this.label_TitDatosEntrada.TabIndex = 19;
-            this.label_TitDatosEntrada.Text = "DATOS DE ENTRADA";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(347, 155);
+            this.label1.Location = new System.Drawing.Point(347, 122);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(185, 20);
             this.label1.TabIndex = 38;
@@ -393,6 +384,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.radioButton12);
             this.groupBox1.Controls.Add(this.radioButton11);
             this.groupBox1.Controls.Add(this.radioButton9);
             this.groupBox1.Controls.Add(this.radioButton2);
@@ -400,23 +392,11 @@
             this.groupBox1.Controls.Add(this.radioButton1);
             this.groupBox1.Controls.Add(this.radioButton3);
             this.groupBox1.Controls.Add(this.radioButton4);
-            this.groupBox1.Location = new System.Drawing.Point(141, 56);
+            this.groupBox1.Location = new System.Drawing.Point(141, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(142, 209);
+            this.groupBox1.Size = new System.Drawing.Size(174, 253);
             this.groupBox1.TabIndex = 50;
             this.groupBox1.TabStop = false;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.radioButton7);
-            this.groupBox2.Controls.Add(this.radioButton8);
-            this.groupBox2.Controls.Add(this.radioButton5);
-            this.groupBox2.Controls.Add(this.radioButton6);
-            this.groupBox2.Location = new System.Drawing.Point(141, 271);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(174, 128);
-            this.groupBox2.TabIndex = 51;
-            this.groupBox2.TabStop = false;
             // 
             // radioButton11
             // 
@@ -430,11 +410,57 @@
             this.radioButton11.UseVisualStyleBackColor = true;
             this.radioButton11.CheckedChanged += new System.EventHandler(this.radioButton11_CheckedChanged);
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.radioButton7);
+            this.groupBox2.Controls.Add(this.radioButton8);
+            this.groupBox2.Controls.Add(this.radioButton5);
+            this.groupBox2.Controls.Add(this.radioButton6);
+            this.groupBox2.Location = new System.Drawing.Point(141, 271);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(174, 128);
+            this.groupBox2.TabIndex = 51;
+            this.groupBox2.TabStop = false;
+            // 
+            // radioButton12
+            // 
+            this.radioButton12.AutoSize = true;
+            this.radioButton12.Location = new System.Drawing.Point(14, 209);
+            this.radioButton12.Name = "radioButton12";
+            this.radioButton12.Size = new System.Drawing.Size(128, 21);
+            this.radioButton12.TabIndex = 52;
+            this.radioButton12.TabStop = true;
+            this.radioButton12.Text = "POR TEXTBOX";
+            this.radioButton12.UseVisualStyleBackColor = true;
+            this.radioButton12.CheckedChanged += new System.EventHandler(this.radioButton12_CheckedChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(466, 309);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(130, 29);
+            this.label4.TabIndex = 53;
+            this.label4.Text = "FUNCION";
+            // 
+            // tbFuncion
+            // 
+            this.tbFuncion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbFuncion.Location = new System.Drawing.Point(329, 342);
+            this.tbFuncion.Margin = new System.Windows.Forms.Padding(4);
+            this.tbFuncion.Name = "tbFuncion";
+            this.tbFuncion.Size = new System.Drawing.Size(416, 34);
+            this.tbFuncion.TabIndex = 54;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(766, 641);
+            this.Controls.Add(this.tbFuncion);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox_Error);
@@ -453,7 +479,6 @@
             this.Controls.Add(this.textBox_Iteraciones);
             this.Controls.Add(this.label_Iteraciones);
             this.Controls.Add(this.label_Funcion);
-            this.Controls.Add(this.label_TitDatosEntrada);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -487,7 +512,6 @@
         private System.Windows.Forms.TextBox textBox_Iteraciones;
         private System.Windows.Forms.Label label_Iteraciones;
         private System.Windows.Forms.Label label_Funcion;
-        private System.Windows.Forms.Label label_TitDatosEntrada;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
@@ -504,6 +528,9 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.RadioButton radioButton11;
+        private System.Windows.Forms.RadioButton radioButton12;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox tbFuncion;
     }
 }
 

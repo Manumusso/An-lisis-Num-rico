@@ -13,8 +13,11 @@ namespace AnalisisNumerico.BackEnd
         public MetodoSecante(Funcion enume) : base(enume)
         {
         }
+        public MetodoSecante(Funcion enume, string str) : base(enume, str)
+        {
+        }
 
-    public Resultados Calcular(Parametros parametros) // Metodo Chelo
+        public Resultados Calcular(Parametros parametros) // Metodo Chelo
         {            
             var Resultado = new Resultados();
             double xant = parametros.ValorIzquierdo;

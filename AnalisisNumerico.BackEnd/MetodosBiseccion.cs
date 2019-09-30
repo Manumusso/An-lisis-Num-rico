@@ -13,6 +13,9 @@ namespace AnalisisNumerico.BackEnd
         public MetodosBiseccion(Funcion enume) : base(enume)
         {
         }
+        public MetodosBiseccion(Funcion enume, string str) : base(enume,str)
+        {
+        }
 
         private double CalcularXrBiseccion(double xi, double xd)
         {

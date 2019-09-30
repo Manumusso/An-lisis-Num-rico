@@ -15,7 +15,12 @@ namespace AnalisisNumerico.BackEnd
         //double ValorIzquierdo 
         //double ValorDerecho 
         //bool Finalizo 
-        public MetodosTangente(Funcion enume):base(enume)
+        public MetodosTangente(Funcion enume) : base(enume)
+        {
+
+        }
+
+        public MetodosTangente(Funcion enume, string str) : base(enume, str)
         {
 
         }

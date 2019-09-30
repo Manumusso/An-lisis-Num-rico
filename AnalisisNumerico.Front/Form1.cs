@@ -55,18 +55,30 @@ namespace AnalisisNumerico.Front
                     case Metodo.TANGENTE:
                         {
                             MetodosTangente Ejecutar = new MetodosTangente(Funcion);
+                            if(Funcion == Funcion.PORTEXTO)
+                            {
+                                Ejecutar = new MetodosTangente(Funcion, tbFuncion.Text);
+                            }
                             resultado = Ejecutar.Calcular(parametros);
                             break;
                         }
                     case Metodo.BISECCION:
                         {
                             MetodosBiseccion Ejecutar = new MetodosBiseccion(Funcion);
+                            if (Funcion == Funcion.PORTEXTO)
+                            {
+                                Ejecutar = new MetodosBiseccion(Funcion, tbFuncion.Text);
+                            }
                             resultado = Ejecutar.MetodoBiseccionReglaFalsa(parametros);
                             break;
                         }
                     case Metodo.REGLAFALSA:
                         {
                             MetodosBiseccion Ejecutar = new MetodosBiseccion(Funcion);
+                            if (Funcion == Funcion.PORTEXTO)
+                            {
+                                Ejecutar = new MetodosBiseccion(Funcion, tbFuncion.Text);
+                            }
                             parametros.Finalizo = false;
                             resultado = Ejecutar.MetodoBiseccionReglaFalsa(parametros);
                             break;
@@ -74,6 +86,10 @@ namespace AnalisisNumerico.Front
                     case Metodo.SECANTE:
                         {
                             MetodoSecante Ejecutar = new MetodoSecante(Funcion);
+                            if (Funcion == Funcion.PORTEXTO)
+                            {
+                                Ejecutar = new MetodoSecante(Funcion, tbFuncion.Text);
+                            }
                             resultado = Ejecutar.Calcular(parametros);
                             break;
                         }
@@ -168,5 +184,9 @@ namespace AnalisisNumerico.Front
             Metodo = Metodo.REGLAFALSA;
         }
 
+        private void radioButton12_CheckedChanged(object sender, EventArgs e)
+        {
+            Funcion = Funcion.PORTEXTO;
+        }
     }
 }
