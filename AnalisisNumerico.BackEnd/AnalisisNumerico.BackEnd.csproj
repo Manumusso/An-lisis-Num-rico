@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MetodosAjuste.cs" />
     <Compile Include="MetodoSecante.cs" />
     <Compile Include="MetodosRaices.cs" />
     <Compile Include="MetodosBiseccion.cs" />
