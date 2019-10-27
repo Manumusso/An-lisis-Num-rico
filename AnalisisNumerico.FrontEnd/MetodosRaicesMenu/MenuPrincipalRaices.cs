@@ -13,7 +13,7 @@ namespace AnalisisNumerico.FrontEnd.MetodosRaicesMenu
 {
     public partial class MenuPrincipalRaices : Form
     {
-        private readonly IMetodosRaices metodosRaices;
+        private readonly MetodosRaices metodosRaices;
 
         public MenuPrincipalRaices()
         {
