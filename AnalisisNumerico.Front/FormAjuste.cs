@@ -76,7 +76,7 @@ namespace AnalisisNumerico.Front
             }
             double r = Math.Sqrt((st - sr) / st) * 100;
 
-            txtPot.Text = "Y = " + Math.Round(A1, 4) + "x + (" + Math.Round(A0, 4) + ")";
+            txtFunMA.Text = "Y = " + Math.Round(A1, 4) + "x + (" + Math.Round(A0, 4) + ")";
             txtCoe.Text = r + "%";
         }
 
@@ -93,7 +93,7 @@ namespace AnalisisNumerico.Front
             }
             var a = new MetodosAjuste();
             string j = a.Polinomial(xi, yi, xl);
-            txtPot.Text = j;
+            txtFunMA.Text = j;
             txtCoe.Text = Convert.ToString(Math.Round(a.Coeficiente, 2)) + "%";
         }
 
@@ -111,7 +111,7 @@ namespace AnalisisNumerico.Front
             var a = new MetodosAjuste();
             string rdo = a.Lagrange(xi, yi, ninter);
             label4.Text = "Imagen de la interpolacion";
-            txtPot.Text = rdo;
+            txtFunMA.Text = rdo;
             lblCoe.Visible = false;
             txtCoe.Visible = false;
             txtPot.Visible = false;

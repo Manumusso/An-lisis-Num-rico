@@ -31,7 +31,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.txtPot = new System.Windows.Forms.TextBox();
             this.txtInter = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtFunMA = new System.Windows.Forms.TextBox();
             this.txtCoe = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblPot = new System.Windows.Forms.Label();
@@ -69,12 +69,12 @@
             this.txtInter.Size = new System.Drawing.Size(113, 20);
             this.txtInter.TabIndex = 2;
             // 
-            // textBox4
+            // txtFunMA
             // 
-            this.textBox4.Location = new System.Drawing.Point(211, 223);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(285, 20);
-            this.textBox4.TabIndex = 3;
+            this.txtFunMA.Location = new System.Drawing.Point(211, 223);
+            this.txtFunMA.Name = "txtFunMA";
+            this.txtFunMA.Size = new System.Drawing.Size(285, 20);
+            this.txtFunMA.TabIndex = 3;
             // 
             // txtCoe
             // 
@@ -173,11 +173,18 @@
             // 
             // dgvPuntos
             // 
+            this.dgvPuntos.AllowUserToAddRows = false;
+            this.dgvPuntos.AllowUserToDeleteRows = false;
+            this.dgvPuntos.AllowUserToResizeColumns = false;
+            this.dgvPuntos.AllowUserToResizeRows = false;
+            this.dgvPuntos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPuntos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPuntos.ColumnHeadersVisible = false;
             this.dgvPuntos.Location = new System.Drawing.Point(33, 131);
             this.dgvPuntos.Name = "dgvPuntos";
+            this.dgvPuntos.RowHeadersVisible = false;
             this.dgvPuntos.Size = new System.Drawing.Size(151, 234);
-            this.dgvPuntos.TabIndex = 14;
+            this.dgvPuntos.TabIndex = 7;
             // 
             // label6
             // 
@@ -216,7 +223,7 @@
             this.Controls.Add(this.lblPot);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtCoe);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtFunMA);
             this.Controls.Add(this.txtInter);
             this.Controls.Add(this.txtPot);
             this.Controls.Add(this.textBox1);
@@ -233,7 +240,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox txtPot;
         private System.Windows.Forms.TextBox txtInter;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtFunMA;
         private System.Windows.Forms.TextBox txtCoe;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblPot;
