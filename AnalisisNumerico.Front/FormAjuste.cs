@@ -117,5 +117,10 @@ namespace AnalisisNumerico.Front
             txtPot.Visible = false;
             lblPot.Visible = false;
         }
+
+        private void FormAjuste_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

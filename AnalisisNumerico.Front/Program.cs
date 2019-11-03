@@ -16,7 +16,7 @@ namespace AnalisisNumerico.Front
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormAjuste());
+            Application.Run(new Home());
         }
     }
 }
