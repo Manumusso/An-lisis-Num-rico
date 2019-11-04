@@ -30,30 +30,30 @@ namespace AnalisisNumerico.Front
                 inter = Convert.ToInt32(txtInter.Text);
             }
 
-            //var n = new MetodosArea();
-            //if (radioButton1.Checked)
-            //{
-            //    txtResult.Text = "El area por Trapecio es: " + Convert.ToString(n.Trapecio(f, a, b));
-            //}
-            //else if (radioButton2.Checked)
-            //{
-            //    txtResult.Text = "El area por Trapecio multiple es: " + Convert.ToString(n.TrapecioMultiple(f, a, b, inter.Value));
-            //}
-            //else if (radioButton3.Checked)
-            //{
-            //    txtResult.Text = "El area por Simpson 1/3 es: " + Convert.ToString(n.Simpson13(f, a, b));
+            var n = new MetodosArea();
+            if (radioButton1.Checked)
+            {
+                txtResult.Text = "El area por Trapecio es: " + Convert.ToString(n.Trapecio(f, a, b));
+            }
+            else if (radioButton2.Checked)
+            {
+                txtResult.Text = "El area por Trapecio multiple es: " + Convert.ToString(n.TrapecioMultiple(f, a, b, inter.Value));
+            }
+            else if (radioButton3.Checked)
+            {
+                txtResult.Text = "El area por Simpson 1/3 es: " + Convert.ToString(n.Simpson13(f, a, b));
 
-            //}
-            //else if (radioButton4.Checked)
-            //{
-            //    txtResult.Text = "El area por Simpson 1/3 multiple es: " + Convert.ToString(n.Simpson13_Multiple(f, a, b, inter.Value));
+            }
+            else if (radioButton4.Checked)
+            {
+                txtResult.Text = "El area por Simpson 1/3 multiple es: " + Convert.ToString(n.Simpson13_Multiple(f, a, b, inter.Value));
 
-            //}
-            //else
-            //{
-            //    txtResult.Text = "El area por Simpson 3/8 es: " + Convert.ToString(n.Simpson38(f, a, b));
+            }
+            else
+            {
+                txtResult.Text = "El area por Simpson 3/8 es: " + Convert.ToString(n.Simpson38(f, a, b));
 
-            //}
+            }
         }
     }
 }

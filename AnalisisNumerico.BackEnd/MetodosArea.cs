@@ -7,7 +7,7 @@ using org.mariuszgromada.math.mxparser;
 
 namespace AnalisisNumerico.BackEnd
 {
-    class MetodosArea
+    public class MetodosArea
     {
         public double Trapecio(string f, double a, double b)
         {
